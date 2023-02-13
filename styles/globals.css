@@ -24,7 +24,7 @@ body {
 }
 
 .background-green {
-    background-color: #A4D164;
+    background-color: #A4D164 !important;
 }
 
 .background-container {
@@ -49,6 +49,12 @@ body {
 
 .own-btn {
     background-color: #2EACE2 !important;
+    color: white;
+    border: none !important;
+}
+
+.own-btn-green {
+    background-color: #A4D164 !important;
     color: white;
     border: none !important;
 }
@@ -85,7 +91,8 @@ body {
 }
 
 .container-question {
-    height: 600px;
+    margin-top: 100px;
+    height: 650px;
 }
 
 .navigator {
@@ -101,3 +108,61 @@ body {
     font-size: .7em;
     color: red;
 }
+
+.question-container {
+    display: flex;
+    grid-template-columns: 400px 400px 400px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+
+}
+
+.question-container input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+	width: 100%;
+}
+
+.card-c {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.card-c:hover {
+    cursor: pointer;
+
+
+}
+
+.question-unselected {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    opacity: .5;
+}
+
+.questtion-item {
+    flex-basis: 30.33333%;
+}
+
+.slider-mb {
+    margin-bottom: 200px;
+}
+
+.my-form-control {
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-radius: 0% !important;
+}
+
+.my-form-control:focus {
+    box-shadow: none !important;
+}
+

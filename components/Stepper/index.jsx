@@ -2,6 +2,7 @@ import React, {useState,useEffect} from 'react'
 import {Form, Button, Row, Col} from 'react-bootstrap';
 import Slider, { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
+import Sample from '../images/sample.png'
 
 
 
@@ -30,28 +31,36 @@ export default function Stepper(props) {
 				<div className="title text-center color-black">{props.data[props.step].question}</div>
 				
 				<div>
-					<Form>
+					<div className="question-container image-option">
 						
 						{data?.ms_answers?.map((a,i)=>(
-							<div key={i} className="mb-3">
-								<Form.Check
+
+							<div  key={i} className="mb-3 questtion-item">
+								<input
 									type="radio"
-									label={a.answer}
-									id={`question-${data.ms_question_id}`}
 									name={`question-${data.ms_question_id}`}
+									id={`answer-${a.ms_answer_id}`}
+									// value={d.package_quantity_id}
 									checked={props.result.response[props.step].answer === a.answer ? true:false}
-
 									onChange={()=>handleAnswer(a.answer)}
-								/>
-								
+                                />
 
+
+								<label htmlFor={`answer-${a.ms_answer_id}`} className={`card-c border rounded-2 pt-2 pb-2 shadow-sm ${props.result.response[props.step].answer === a.answer ?('question-selected'):('question-unselected')}`}>
+									<img src={a.image} alt="" />
+									<div>{a.answer}</div>
+									
+								</label>
 							</div>
 						))}
-						
+					</div>
+					<div>	
 						{props.data[props.step].isexplain === '1' ?(
 							<div>
-								<div>{props.data[props.step].explain_label}</div>
+								<div className="text-center">{props.data[props.step].explain_label}</div>
 								<Form.Control
+									className= "my-form-control text=center"
+									style={{width:"50%",margin:"auto"}}
 									type="text"
 									name={`explain_answer`}
 									value={props.result.response[props.step].explain_answer || ""}
@@ -59,9 +68,7 @@ export default function Stepper(props) {
 								/>
 							</div>
 						):(``)}
-						
-
-					</Form>
+					</div>
 				</div>
 
 			</div>
@@ -111,13 +118,12 @@ export default function Stepper(props) {
 		}
 
 		
-		console.log('mark', marks)
 		return (
 			<div>
 				<div>
-				<div>
-					<div className="title text-center color-black">{props.data[props.step].question}</div>
-				</div>
+					<div className="slider-mb">
+						<div className="title text-center color-black">{props.data[props.step].question}</div>
+					</div>
 					<Slider 
 						dots 
 						marks={marks}
@@ -146,6 +152,7 @@ export default function Stepper(props) {
 							<Col md={3}>Name</Col>
 							<Col md={9}>
 								<Form.Control
+									className= "my-form-control"
 									type="text"
 									name="name"
 									value={props.result.name || ""}
@@ -158,6 +165,7 @@ export default function Stepper(props) {
 							<Col md={3}>Phone</Col>
 							<Col md={9}>
 								<Form.Control
+									className= "my-form-control"
 									type="text"
 									name="phone"
 									value={props.result.phone || ""}
@@ -171,6 +179,7 @@ export default function Stepper(props) {
 							<Col md={3}>Email</Col>
 							<Col md={9}>
 								<Form.Control
+									className= "my-form-control"
 									type="text"
 									name="email"
 									value={props.result.email || ""}
@@ -183,6 +192,7 @@ export default function Stepper(props) {
 							<Col md={3}>Position</Col>
 							<Col md={9}>
 								<Form.Control
+									className= "my-form-control"
 									type="text"
 									name="position"
 									value={props.result.position || ""}
@@ -195,6 +205,7 @@ export default function Stepper(props) {
 							<Col md={3}>Company Name</Col>
 							<Col md={9}>
 								<Form.Control
+									className= "my-form-control"
 									type="text"
 									name="company"
 									value={props.result.company || ""}
@@ -267,8 +278,8 @@ export default function Stepper(props) {
 				{render_option(props.data[props.step])}
 			</div>
 			<div className="navigator text-center">
-				{props.step > 0 ? (<Button className="own-btn" onClick={handlePrev}>Previous</Button>):(``)}
-				<Button className="own-btn" onClick={handleNext} disabled={!props.nextBtn}>Next</Button>
+				{props.step > 0 ? (<Button className="own-btn me-4 rounded-3 ps-4 pe-4" onClick={handlePrev}>Previous</Button>):(``)}
+				<Button className="own-btn-green rounded-3 ps-4 pe-4" onClick={handleNext} disabled={!props.nextBtn}>Next</Button>
 				
 
 			</div>
