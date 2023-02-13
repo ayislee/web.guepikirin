@@ -11,7 +11,7 @@ export default function Background() {
 				<Col md={6}>
 					<img src={backgroundGP.src} alt="" />
 				</Col>
-				<Col md={6} className="text-end kanan">
+				<Col md={6} className="text-end kanan background-line">
 					<img src={backgroundLine.src} alt="right" />
 				</Col>
 			</Row>

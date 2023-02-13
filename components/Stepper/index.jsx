@@ -35,7 +35,7 @@ export default function Stepper(props) {
 						
 						{data?.ms_answers?.map((a,i)=>(
 
-							<div  key={i} className="mb-3 questtion-item">
+							<div  key={i} className="questtion-item">
 								<input
 									type="radio"
 									name={`question-${data.ms_question_id}`}
@@ -48,7 +48,7 @@ export default function Stepper(props) {
 
 								<label htmlFor={`answer-${a.ms_answer_id}`} className={`card-c border rounded-2 pt-2 pb-2 shadow-sm ${props.result.response[props.step].answer === a.answer ?('question-selected'):('question-unselected')}`}>
 									<img src={a.image} alt="" />
-									<div>{a.answer}</div>
+									<div className= "text-answer">{a.answer}</div>
 									
 								</label>
 							</div>
@@ -90,13 +90,17 @@ export default function Stepper(props) {
 	}
 
 	const render_slider = () => {
+		const mediaQuery = window.matchMedia('(max-width: 768px)')
+
 		const marks = {}
 		let defaultValue
 		// console.log('props.data[props.step].answers',props.data[props.step].ms_answers)
 		// console.log('props.result.response[props.step].answer',props.result.response[props.step].answer)
 		
 		for (const key in props.data[props.step].ms_answers) {
-			marks[key] = props.data[props.step].ms_answers[key].answer
+			marks[key] = {
+				label: 	<div className={`slider-text`}>{props.data[props.step].ms_answers[key].answer}</div>
+			}
 		}
 
 		if(props.result.response[props.step].answer===null){
@@ -120,7 +124,7 @@ export default function Stepper(props) {
 		
 		return (
 			<div>
-				<div>
+				<div className="ms-2 me-2">
 					<div className="slider-mb">
 						<div className="title text-center color-black">{props.data[props.step].question}</div>
 					</div>

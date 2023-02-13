@@ -3,7 +3,8 @@ html,
 body {
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
+    overflow: hidden;
+    height: 100vh;
     
 }
 
@@ -71,7 +72,7 @@ body {
     font-family: Inter;
     font-size: 32px;
     font-weight: 700;
-    line-height: 50px;
+    /* line-height: 50px; */
     letter-spacing: 0.3em;
 
 
@@ -92,7 +93,7 @@ body {
 
 .container-question {
     margin-top: 100px;
-    height: 650px;
+    height: 500px;
 }
 
 .navigator {
@@ -111,12 +112,10 @@ body {
 
 .question-container {
     display: flex;
-    grid-template-columns: 400px 400px 400px;
     justify-content: center;
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
-
 }
 
 .question-container input[type="radio"] {
@@ -136,8 +135,10 @@ body {
 
 .card-c:hover {
     cursor: pointer;
+}
 
-
+.card-c > img {
+    width: 200px;
 }
 
 .question-unselected {
@@ -160,9 +161,75 @@ body {
     border-left: none !important;
     border-right: none !important;
     border-radius: 0% !important;
+    background-color: #fff0 !important;
 }
 
 .my-form-control:focus {
     box-shadow: none !important;
 }
 
+.responsive {
+    max-height: 64px;
+}
+
+.responsive-label {
+    display: block
+}
+
+.slider-text {
+    font-size: 20px;
+}
+
+.background-line {
+    display: block;
+}
+
+.text-answer {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .text-answer {
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    .responsive {
+        max-height: 24px;
+    }
+
+    .responsive-label {
+        display: none
+    }
+
+    .container-question {
+        margin-top: 10px;
+        height: 500px;
+    }
+
+    .title {
+        font-size: 20px;
+        letter-spacing: 0;
+    }
+
+    .questtion-item {
+        flex-basis: 47%;
+    }
+
+
+    .card-c > img {
+        width: 100px;
+    }
+
+    .slider-text {
+        font-size: 10px;
+    }
+
+    .background-line {
+        display: none;
+    }
+    
+
+}

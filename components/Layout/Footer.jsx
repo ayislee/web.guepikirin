@@ -16,11 +16,11 @@ export default function Footer() {
 			<Container className="text-end" style={{zIndex:-1}}>
 				<a href="" className="link-secondary">Terms And Conditions</a>
 			</Container>
-			<div className="background-green footer-container">
+			<div className="background-green footer-container pb-2">
 				<Container>
 					<div className="d-flex align-items-center">
-						<img src={GPLogo.src} alt="" style={{maxHeight:64}} />
-						<div className="font-size-10 line-height-2 flex-grow-1">Unlimited Content, Video, Event, and More. Support Anywhere, Sponsored Anytime, Make Your Business More Reachable.</div>
+						<img src={GPLogo.src} alt="" className="responsive" />
+						<div className="responsive-label font-size-10 line-height-2 flex-grow-1">Unlimited Content, Video, Event, and More. Support Anywhere, Sponsored Anytime, Make Your Business More Reachable.</div>
 						<div className="d-flex align-items-end">
 							<a href="" className="me-3"><img src={facebook.src} alt="" /></a>
 							<a href="" className="me-3"><img src={twitter.src} alt="" /></a>
