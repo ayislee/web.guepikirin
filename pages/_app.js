@@ -2,10 +2,10 @@ import '@/styles/globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import '../scss/app.scss';
 import { SSRProvider } from 'react-bootstrap';
-import { config } from '@fortawesome/fontawesome-svg-core'
+// import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css' // Import the CSS
 import Script from 'next/script'
-config.autoAddCss = false // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
+// config.autoAddCss = false // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
 
 export default function App({ Component, pageProps }) {
     return (
