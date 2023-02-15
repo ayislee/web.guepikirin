@@ -19,10 +19,13 @@ export default function Layout(props) {
 		</Head>
 		
 		<Background/>
+		<div className="d-flex flex-column h-100">
+			<Header/>
+				<div>{props.children}</div>
+			<Footer/>
+		</div>
 		
-		<Header/>
-		<div>{props.children}</div>
-		<Footer/>
+		
 	</ThemeProvider >
 
   )

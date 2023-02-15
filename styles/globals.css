@@ -96,9 +96,7 @@ body {
     height: 600px;
 }
 
-.navigator {
 
-}
 
 .form-container {
     width: 570px;
@@ -187,6 +185,23 @@ body {
 .text-answer {
     font-size: 16px;
     font-weight: 700;
+}
+
+.content-wrap{
+    /* overflow-y: hidden; */
+}
+
+.content-data {
+    /* position: relative; */
+    margin: auto;
+    /* background-color: #2EACE2; */
+    /* height: max-content */
+}
+
+.navigator {
+    
+    /* background-color: red; */
+    z-index: 1000000;
 }
 
 @media only screen and (max-width: 768px) {

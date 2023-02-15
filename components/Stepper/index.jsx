@@ -277,15 +277,18 @@ export default function Stepper(props) {
 	
 	return (
 		<>
-			<div className="container-question">
-				{/* <div>{JSON.stringify(props.data[props.step])}</div> */}
-				{render_option(props.data[props.step])}
+			<div className="content-wrap flex-grow-1">
+				<div className="content-data">
+					<div className="container-question">
+						{/* <div>{JSON.stringify(props.data[props.step])}</div> */}
+						{render_option(props.data[props.step])}
+					</div>
+					
+				</div>
 			</div>
 			<div className="navigator text-center">
 				{props.step > 0 ? (<Button className="own-btn me-4 rounded-3 ps-4 pe-4" onClick={handlePrev}>Previous</Button>):(``)}
 				<Button className="own-btn-green rounded-3 ps-4 pe-4" onClick={handleNext} disabled={!props.nextBtn}>Next</Button>
-				
-
 			</div>
 		</>
 		
