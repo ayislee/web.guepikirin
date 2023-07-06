@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Layout from '../components/Layout'
 import {Container, Button} from 'react-bootstrap'
 import { useRouter } from 'next/router'
-import comming from '../components/images/coming-soon.jpg'
+import comming from '../components/images/coming-soon-fh.jpg'
 import commingMobile from '../components/images/coming-soon-mobile.jpg'
 import React, { useState, useEffect } from 'react';
 
@@ -39,10 +39,8 @@ export default function Home() {
         //     </Container>
         // </Layout>
 
-        <div>
-            <Container>
+        <div style={{width:"100vw"}}> 
                 <img src={imageBackground} alt="right" width="100%"/>
-            </Container>
         </div>
     )
 }
