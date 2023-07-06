@@ -26,7 +26,6 @@ export default function Home() {
             }else {
                 setImageBackground(commingMobile.src)
             }
-            
         })
     },[])
     return (
